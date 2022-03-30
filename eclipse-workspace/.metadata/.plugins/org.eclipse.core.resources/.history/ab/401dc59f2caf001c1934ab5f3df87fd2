@@ -1,0 +1,35 @@
+package com.test.exam03;
+
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+
+@FunctionalInterface
+interface MyLamdaFuncion {
+	int sum(int a, int b);
+}
+
+@FunctionalInterface
+interface MyPrint {
+	String printLamda();
+}
+
+public class LamdaExam {
+	
+	public static void main(String[] args) {
+		
+		MyLamdaFuncion lamdaFunction = (int a, int b) -> a+b; //익명함수
+		System.out.println(lamdaFunction.sum(3, 4));
+		
+		MyPrint myPrint = () ->"Hello world 1";
+		System.out.println(myPrint.printLamda());
+		
+		//Supplier : 매개변수 없이 반환값만을 갖는 함수형 인터페이스
+		Supplier<String> supplier = () -> "Hello World 2";
+		System.out.println(supplier.get());
+		
+		//Consumer : 객체 T를 매개변수로 받아서 사용. 반환값이 없는 함수형 인터페이스
+		Consumer<String> consumer = (str)->System.out.println(str.split(" ")[0]);
+		consumer.andThen(System.out::println).accept("Hello World");
+	}
+
+}

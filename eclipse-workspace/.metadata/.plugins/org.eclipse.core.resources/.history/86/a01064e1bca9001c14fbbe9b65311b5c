@@ -1,0 +1,19 @@
+package com.test.exam02;
+
+public class Operation {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int math = 90;
+		int eng = 70;
+		
+		int totalScore = math + eng;
+		System.out.println("totalScore");
+		
+		double avg = totalScore / 2.0;
+		System.out.println("avg");
+
+	}
+
+}
